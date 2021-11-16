@@ -1,0 +1,13 @@
+<?php
+
+# Create the menu
+$menu = array (
+	'/' => 'Home',
+	'/research/' => 'Research',
+	'/people/' => 'People',
+	'/resources/' => 'Resources',
+	'/events/' => 'Events',
+	'/contacts/' => 'Contacts',
+);
+
+?>

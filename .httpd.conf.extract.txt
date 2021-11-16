@@ -1,0 +1,37 @@
+# pureContent implementation of Project Light, the University of Cambridge house style (2012)
+
+# Load using:
+#	# pureContent implementation of Project Light
+#	Include /path/to/projectlight-purecontent/.httpd.conf.extract.txt
+#	Use MacroProjectLightPurecontent "www.widgets.cam.ac.uk" "Widgets" "/path/to/site/:/path/to/php/libraries/:/path/to/projectlight-purecontent/"
+
+
+<Macro MacroProjectLightPurecontent $siteUrl $shortname $includePath>
+	
+	# Set include_path
+	<Location />
+		php_value include_path $includePath
+	</Location>
+	
+	# Enable HTML pages to be parsed
+	AddType application/x-httpd-php .html
+
+	# Load site; change settings in sitetech/.config.php
+	php_value auto_prepend_file sitetech/prepended.html
+	php_value auto_append_file sitetech/appended.html
+	
+	# Alias assets
+	Use MacroProjectLight
+	
+	# Editor
+	Use MacroPureContentEditorRaven "$siteUrl"
+	
+	# SSO (Single Sign-On location)
+	Use MacroSingleSignOnRaven "$shortname Single Sign-On" /
+	
+	# Errors
+	ErrorDocument 403 /sitetech/403.html
+	ErrorDocument 404 /sitetech/404.html
+	
+</Macro>
+

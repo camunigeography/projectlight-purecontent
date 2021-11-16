@@ -1,0 +1,13 @@
+﻿<?php
+
+# Define site settings
+$settings = array (
+	'siteTitle' => 'Department of Geography',
+	'shortName' => 'Geography',
+	'themeColour' => '4',
+	'userApi' => 'https://www.example.cam.ac.uk/api/user/%username',
+	'adminUsers' => array ('spqr1'),
+	'googleAnalytics' => 'UA-123456-0',
+);
+
+?>
