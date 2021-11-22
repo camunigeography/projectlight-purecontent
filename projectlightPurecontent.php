@@ -79,6 +79,11 @@ class projectlight
 				$this->opengraphHtml = pureContent::socialNetworkingMetadata ($this->settings['siteTitle'], $twitterHandle = false, $currentFolder . '/' . $headerImageFile, false, html_entity_decode ($this->settings['siteTitle'] . $this->browserline, ENT_COMPAT, 'UTF-8'));
 			}
 		}
+		if (is_readable ($this->currentDirectory . '/header.mp4')) {
+			$this->headerImageHtml  = "\n\t\t\t\t" . '<video width="100%" poster="header.jpg" autoplay="autoplay" muted="muted" playsinline="playsinline">';
+			$this->headerImageHtml .= "\n\t\t\t\t\t" . '<source src="header.mp4" type="video/mp4" />';
+			$this->headerImageHtml .= "\n\t\t\t\t" . '</video>';
+		}
 		
 		# Determine if an area is full-width
 		$this->isFullWidth = false;
@@ -472,6 +477,7 @@ class projectlight
 	
 	
 	# Carousel file
+	#!# Should be instead of header.jpg if already assigned
 	public function carouselFile ()
 	{
 		# Determine location
