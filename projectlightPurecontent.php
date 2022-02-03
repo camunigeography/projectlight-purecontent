@@ -23,6 +23,7 @@ class projectlight
 			'criticalLinksHtml' => false,
 			'headingFeedbackLink' => false,
 			'headingWidgetsHtml' => false,
+			'curatedFrontPage' => true,
 			'fullWidthAreas' => array (),	// These paths get full width, breaking out of the fixed width
 		);
 	}
@@ -291,6 +292,10 @@ class projectlight
 	# Determine if the page is the home page
 	public function isHomePage ()
 	{
+		# If the front page is non-curated, do not treat differently
+		if (!$this->settings['curatedFrontPage']) {return false;}
+		
+		# Match against page URL
 		return ($_SERVER['SCRIPT_URL'] == '/');
 	}
 	
