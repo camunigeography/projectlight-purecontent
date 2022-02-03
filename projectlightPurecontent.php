@@ -95,6 +95,9 @@ class projectlight
 			}
 		}
 		
+		# Get the file contents
+		$this->fileContents = file_get_contents ($_SERVER['SCRIPT_FILENAME']);
+		
 		# Load box generation support
 		#!# Remove when sites all moved to using shortcode, which loads the class itself
 		require_once ('boxes.php');
@@ -201,9 +204,8 @@ class projectlight
 	public function getPageTitle ()
 	{
 		# Get the contents from the main page content; $asHtml = true ensures that any image within the HTML is maintained
-		$fileContents = file_get_contents ($_SERVER['SCRIPT_FILENAME']);
 		require_once ('application.php');
-		$pageTitle = application::getTitleFromFileContents ($fileContents, $startingCharacters = 100, $tag = 'h1', $asHtml = true);
+		$pageTitle = application::getTitleFromFileContents ($this->fileContents, $startingCharacters = 100, $tag = 'h1', $asHtml = true);
 		
 		# As a fallback, try reading it dynamically
 		#!# Should this use innerHtml now that $asHtml = true is set?
@@ -617,12 +619,8 @@ class projectlight
 	#!# Need to remove as Flash is now legacy
 	public function flowplayer ()
 	{
-		# Read the current page
-		#!# Inefficient as also gets run for flowplayer
-		$currentPage = file_get_contents ($_SERVER['SCRIPT_FILENAME']);
-		
 		# End if not present
-		if (!substr_count ($currentPage, ' class="flv')) {return;}
+		if (!substr_count ($this->fileContents, ' class="flv')) {return;}
 		
 		#!# Hard-coded path
 		include ('/sitetech/flowplayer/embed.html');
@@ -632,12 +630,8 @@ class projectlight
 	# JS lightbox integration
 	public function lightbox ()
 	{
-		# Read the current page
-		#!# Inefficient as also gets run for flowplayer
-		$currentPage = file_get_contents ($_SERVER['SCRIPT_FILENAME']);
-		
 		# End if not present
-		if (!substr_count ($currentPage, ' class="lightbox')) {return;}
+		if (!substr_count ($this->fileContents, ' class="lightbox')) {return;}
 		
 		#!# Hard-coded path
 		include ('/sitetech/jquery/jquery-lightbox/embed.html');
