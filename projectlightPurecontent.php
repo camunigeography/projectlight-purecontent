@@ -621,7 +621,11 @@ class projectlight
 	# Shortcode-handled content - run the shortcode to replace the content, echo the modified content, load the append, then end
 	public function shortcodeHandledContent ()
 	{
-		pureContent::shortcodeHandledContent ();
+		# Define global shortcodes directory
+		$additionalDirectory = realpath (dirname (__FILE__)) . '/shortcodes/';
+		
+		# Run handler
+		pureContent::shortcodeHandledContent ($additionalDirectory);
 	}
 	
 	
