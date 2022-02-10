@@ -629,18 +629,6 @@ class projectlight
 	}
 	
 	
-	# Flowplayer integration
-	#!# Need to remove as Flash is now legacy
-	public function flowplayer ()
-	{
-		# End if not present
-		if (!substr_count ($this->fileContents, ' class="flv')) {return;}
-		
-		#!# Hard-coded path
-		include ('/sitetech/flowplayer/embed.html');
-	}
-	
-	
 	# JS lightbox integration
 	public function lightbox ()
 	{
