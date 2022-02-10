@@ -25,6 +25,7 @@ class projectlight
 			'headingWidgetsHtml' => false,
 			'curatedFrontPage' => true,
 			'fullWidthAreas' => array (),	// These paths get full width, breaking out of the fixed width
+			'sidebarSections' => array ('/people/', '/research/projects/'),
 		);
 	}
 	
@@ -549,8 +550,17 @@ class projectlight
 	# Data sidebar
 	public function dataSidebar ()
 	{
-		#!# Not efficient to load this every time when only used within /research/ and /people/
-		# Load the auto data sidebar, used on biography / research project pages
+		# Only run in allowlisted sections, e.g. biography / research project pages
+		$show = false;
+		foreach ($this->settings['sidebarSections'] as $path) {
+			if (preg_match ('/^' . addcslashes ($path, '/') . '/', $_SERVER['SCRIPT_NAME'])) {
+				$show = true;
+				break;
+			}
+		}
+		if (!$show) {return;}
+		
+		# Load the auto data sidebar
 		require_once ('pureContentLookups.php');
 		$pureContentLookups = new pureContentLookups ();
 		$html = $pureContentLookups->sidebar ();
