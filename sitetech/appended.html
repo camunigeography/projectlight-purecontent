@@ -5,9 +5,11 @@
 	
 	<?php $projectlight->footermenu (); ?>
 	
-
+	
+			<?php if (!$projectlight->isHomePage ()) {	//For the home page, remove the left3+right9 column structure ?>
 				</div>
 			</div>
+			<?php } // End of !$isHomePage check ?>
 
 		</div>	
 	</div>
