@@ -274,7 +274,7 @@ class projectlight
 	# Body attributes
 	public function bodyAttributes ()
 	{
-		return pureContent::bodyAttributes (true, 'campl-theme-' . $this->settings['themeColour'] . ($this->isFullWidth ? ' web-application' : ''));
+		return pureContent::bodyAttributes (true, 'campl-theme-' . $this->settings['themeColour'] . ($this->isFullWidth ? ' web-application' : '') . ($_SERVER['SERVER_PORT'] == '8080' ? ' editing-mode' : ''));
 	}
 	
 	
