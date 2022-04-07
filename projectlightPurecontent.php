@@ -661,18 +661,16 @@ class projectlight
 		if (!$this->settings['googleAnalytics']) {return;}
 		
 		# Compile and return the HTML
-		return $html = '
+		return $html = "
+			<!-- Global site tag (gtag.js) - Google Analytics -->
+			<script async=\"async\" src=\"https://www.googletagmanager.com/gtag/js?id={$this->settings['googleAnalytics']}\"></script>
 			<script>
-				var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
-				document.write (unescape ("%3Cscript src=\'" + gaJsHost + "google-analytics.com/ga.js\'%3E%3C/script%3E"));
+				window.dataLayer = window.dataLayer || [];
+				function gtag () {dataLayer.push (arguments);}
+				gtag ('js', new Date ());
+				gtag ('config', '{$this->settings['googleAnalytics']}');
 			</script>
-			<script>
-				try {
-					var pageTracker = _gat._getTracker ("' . $this->settings['googleAnalytics'] . '");
-					pageTracker._trackPageview();
-				} catch (err) {}
-			</script>
-		';
+		";
 	}
 	
 	
