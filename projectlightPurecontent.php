@@ -668,7 +668,7 @@ class projectlight
 				window.dataLayer = window.dataLayer || [];
 				function gtag () {dataLayer.push (arguments);}
 				gtag ('js', new Date ());
-				gtag ('config', '{$this->settings['googleAnalytics']}');
+				gtag ('config', '{$this->settings['googleAnalytics']}', {'anonymize_ip': true});
 			</script>
 		";
 	}
