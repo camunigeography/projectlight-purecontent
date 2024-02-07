@@ -336,6 +336,7 @@
 	</div>	
 
 	<div class="campl-row campl-page-header campl-sub-section-page">
+		<nav><!-- Useful for screen reader users, e.g. JAWS -->
 		<div class="campl-wrap clearfix campl-local-navigation" id="local-nav">
 			<div class="campl-local-navigation-container">
 				
@@ -343,6 +344,7 @@
 				
 			</div>
 		</div>
+		</nav><!-- / Useful for screen reader users, e.g. JAWS -->
 
 <?php if ($projectlight->isHomePage ()) {	//For the home page, remove the left3+right9 column structure ?>
 	
@@ -420,12 +422,16 @@
 		
 <?php } // End of $isHomePage check ?>
 				
+				<!-- Start of content -->
+				
 				
 				<?php echo $projectlight->dataSidebar (); ?>
 				<?php $projectlight->sectionmenu (); ?>
 				<?php $projectlight->headermenu (); ?>
 				<?php $projectlight->sidebar (); ?>
 				
+				
+				<main><!-- Useful for screen reader users, e.g. JAWS click Q then Insert-Down -->
 				
 				<?php $projectlight->doiAutoLinking (); ?>
 				
