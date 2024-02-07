@@ -67,9 +67,9 @@ class projectlight
 		$this->headerImageHtml = false;
 		$this->opengraphHtml = false;
 		$headerImageFile = 'header.jpg';
-        $filename = pathinfo ($_SERVER['SCRIPT_URL'], PATHINFO_FILENAME);
-        if (is_readable ($this->currentDirectory . "/header-{$filename}.jpg")) {
-            $headerImageFile = "header-{$filename}.jpg";
+		$filename = pathinfo ($_SERVER['SCRIPT_URL'], PATHINFO_FILENAME);
+		if (is_readable ($this->currentDirectory . "/header-{$filename}.jpg")) {
+			$headerImageFile = "header-{$filename}.jpg";
 		}
 		if (!is_readable ($this->currentDirectory . '/header.html') && is_readable ($this->currentDirectory . '/' . $headerImageFile)) {
 			list ($width, $height) = getimagesize ($this->currentDirectory . '/' . $headerImageFile);
