@@ -204,9 +204,13 @@ class projectlight
 	# Getter for page title, i.e. H1
 	public function getPageTitle ()
 	{
-		# Get the contents from the main page content; $asHtml = true ensures that any image within the HTML is maintained
-		require_once ('application.php');
-		$pageTitle = application::getTitleFromFileContents ($this->fileContents, $startingCharacters = 100, $tag = 'h1', $asHtml = true);
+		# Unknown by default
+		$pageTitle = '';
+		
+		# Get the contents from the main page content H1 tag (as HTML, which ensures any image within the HTML is retained)
+		if ($result = preg_match ("|<h1[^>]*>(?!</h1>)(.+)</h1>|i", $this->fileContents, $matches)) {
+			$pageTitle = trim ($matches[1]);
+		}
 		
 		# As a fallback, try reading it dynamically
 		#!# Should this use innerHtml now that $asHtml = true is set?
