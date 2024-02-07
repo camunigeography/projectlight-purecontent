@@ -29,7 +29,6 @@ Dependencies
 Example sites
 -------------
 
-* www.geog.cam.ac.uk
 * www.spri.cam.ac.uk
 * www.esg.cam.ac.uk
 * www.campop.geog.cam.ac.uk
