@@ -204,26 +204,21 @@ class projectlight
 	# Getter for page title, i.e. H1
 	public function getPageTitle ()
 	{
-		# Unknown by default
-		$pageTitle = '';
-		
 		# Get the contents from the main page content H1 tag (as HTML, which ensures any image within the HTML is retained)
 		if ($result = preg_match ("|<h1[^>]*>(?!</h1>)(.+)</h1>|i", $this->fileContents, $matches)) {
-			$pageTitle = trim ($matches[1]);
+			return $pageTitle = trim ($matches[1]);
 		}
 		
 		# As a fallback, try reading it dynamically
 		#!# Should this use innerHtml now that $asHtml = true is set?
-		if (empty ($pageTitle)) {
-			$pageTitle = "
-			<span id=\"pagetitledynamic\">&nbsp;</span>
-			<script>
-				window.onload = function () {
-					var h1Tag = document.getElementById ('content').getElementsByTagName ('h1')[0].innerText;
-					document.getElementById ('pagetitledynamic').innerText = h1Tag;
-				};
-			</script>";
-		}
+		$pageTitle = "
+		<span id=\"pagetitledynamic\">&nbsp;</span>
+		<script>
+			window.onload = function () {
+				var h1Tag = document.getElementById ('content').getElementsByTagName ('h1')[0].innerText;
+				document.getElementById ('pagetitledynamic').innerText = h1Tag;
+			};
+		</script>";
 		
 		# Return the page title HTML
 		return $pageTitle;
