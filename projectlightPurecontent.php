@@ -210,14 +210,12 @@ class projectlight
 		}
 		
 		# As a fallback, try reading it dynamically
-		#!# Should this use innerHtml now that $asHtml = true is set?
 		$pageTitle = "
 		<span id=\"pagetitledynamic\">&nbsp;</span>
 		<script>
-			window.onload = function () {
-				var h1Tag = document.getElementById ('content').getElementsByTagName ('h1')[0].innerText;
-				document.getElementById ('pagetitledynamic').innerText = h1Tag;
-			};
+			document.addEventListener ('DOMContentLoaded', function () {
+				document.getElementById ('pagetitledynamic').innerHTML = document.querySelectorAll ('#content h1')[0].innerHTML;
+			});
 		</script>";
 		
 		# Return the page title HTML
