@@ -114,9 +114,13 @@ class projectlight
 	
 	
 	# Getter for site title
-	public function getSiteTitle ()
+	public function getSiteTitle ($escapeHtml = true)
 	{
-		return $this->settings['siteTitle'];
+		$siteTitle = $this->settings['siteTitle'];
+		if ($escapeHtml) {
+			$siteTitle = strip_tags (str_replace ('<br />', ' ', $siteTitle));
+		}
+		return $siteTitle;
 	}
 	
 	
