@@ -222,7 +222,10 @@ class projectlight
 		<span id=\"pagetitledynamic\">&nbsp;</span>
 		<script>
 			document.addEventListener ('DOMContentLoaded', function () {
-				document.getElementById ('pagetitledynamic').innerHTML = document.querySelectorAll ('#content h1')[0].innerHTML;
+				const heading = document.querySelectorAll ('#content h1');
+				if (heading.length) {
+					document.getElementById ('pagetitledynamic').innerHTML = heading[0].innerHTML;
+				}
 			});
 		</script>";
 		
