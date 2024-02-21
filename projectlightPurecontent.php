@@ -26,6 +26,10 @@ class projectlight
 			'curatedFrontPage' => true,
 			'fullWidthAreas' => array (),	// These paths get full width, breaking out of the fixed width
 			'sidebarSections' => array ('/people/', '/research/projects/'),
+			'breadcrumbTrailDividingTextOnPage' => ' &#187; ',
+			'breadcrumbTrailDividingTextInBrowserLine' => ' &#187; ',
+			'breadcrumbTrailIntroductoryText' => 'You are in:  ',
+			'breadcrumbTrailHomeText' => 'Home',
 		);
 	}
 	
@@ -44,7 +48,7 @@ class projectlight
 		$this->settings = $this->assignArguments ($settings, $this->defaults ());
 		
 		# Get the result from the function below
-		list ($this->browserline, $this->locationline, $this->menusection, $this->menufile, $this->navigationHierarchy) = pureContent::assignNavigation ();
+		list ($this->browserline, $this->locationline, $this->menusection, $this->menufile, $this->navigationHierarchy) = pureContent::assignNavigation ($this->settings['breadcrumbTrailDividingTextOnPage'], $this->settings['breadcrumbTrailDividingTextInBrowserLine'], $this->settings['breadcrumbTrailIntroductoryText'], $this->settings['breadcrumbTrailHomeText']);
 		
 		# Add in custom page title / location line entries if this file has been embedded in an application
 		if (isSet ($embeddedModeBrowserline)) {
