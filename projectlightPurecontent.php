@@ -26,6 +26,7 @@ class projectlight
 			'curatedFrontPage' => true,
 			'fullWidthAreas' => array (),	// These paths get full width, breaking out of the fixed width
 			'sidebarSections' => array ('/people/', '/research/projects/'),
+			'sidebarSectionsExclude' => array (),
 			'breadcrumbTrailDividingTextOnPage' => ' &#187; ',
 			'breadcrumbTrailDividingTextInBrowserLine' => ' &#187; ',
 			'breadcrumbTrailIntroductoryText' => 'You are in:  ',
@@ -558,6 +559,13 @@ class projectlight
 	# Data sidebar
 	public function dataSidebar ()
 	{
+		# Do not run in denylisted sections
+		foreach ($this->settings['sidebarSectionsExclude'] as $path) {
+			if (preg_match ('/^' . addcslashes ($path, '/') . '/', $_SERVER['SCRIPT_NAME'])) {
+				return false;
+			}
+		}
+		
 		# Only run in allowlisted sections, e.g. biography / research project pages
 		$show = false;
 		foreach ($this->settings['sidebarSections'] as $path) {
