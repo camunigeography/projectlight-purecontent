@@ -78,7 +78,7 @@ class projectlight
 		}
 		if (!is_readable ($this->currentDirectory . '/header.html') && is_readable ($this->currentDirectory . '/' . $headerImageFile)) {
 			list ($width, $height) = getimagesize ($this->currentDirectory . '/' . $headerImageFile);
-			if (($width == 883 && $height == 292) || ($width == 885 && $height == 432)) {
+			if (($width == 883 && $height == 292) || ($width == 885 && $height == 432) || ($width == 1117 && $height == 432)) {
 				$this->headerImageHtml = '<img src="' . $headerImageFile . '" alt="" width="100%" style="max-height: ' . $height . 'px;" />' . "\n";
 				
 				$currentFolder = str_replace ($_SERVER['DOCUMENT_ROOT'], '', $this->currentDirectory);        // NB DOCUMENT_ROOT will not be slash-terminated, as pureContent::cleanServerGlobals() will have been run
