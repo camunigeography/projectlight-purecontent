@@ -15,16 +15,13 @@
 	
 	# Enable HTML pages to be parsed
 	AddType application/x-httpd-php .html
-
+	
 	# Load site; change settings in sitetech/.config.php
 	php_value auto_prepend_file sitetech/prepended.html
 	php_value auto_append_file sitetech/appended.html
 	
 	# Alias assets
 	Use MacroProjectLight
-	
-	# Editor
-	Use MacroPureContentEditorRaven "$siteUrl"
 	
 	# SSO (Single Sign-On location)
 	Use MacroSingleSignOnRaven "$shortname Single Sign-On" /

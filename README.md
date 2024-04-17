@@ -40,7 +40,7 @@ Example sites
 Author
 ------
 
-Martin Lucas-Smith, Department of Geography, University of Cambridge, 2014-21.
+Martin Lucas-Smith, Department of Geography, University of Cambridge, 2014-24.
 
 
 License
