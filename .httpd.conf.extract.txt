@@ -6,7 +6,7 @@
 #	Use MacroProjectLightPurecontent "www.widgets.cam.ac.uk" "Widgets" "/path/to/site/:/path/to/php/libraries/:/path/to/projectlight-purecontent/"
 
 
-<Macro MacroProjectLightPurecontent $siteUrl $shortname $includePath>
+<Macro MacroProjectLightPurecontent $shortname $includePath>
 	
 	# Set include_path
 	<Location />
