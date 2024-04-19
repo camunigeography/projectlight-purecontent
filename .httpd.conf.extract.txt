@@ -3,17 +3,12 @@
 # Load using:
 #	# pureContent implementation of Project Light
 #	Include /path/to/projectlight-purecontent/.httpd.conf.extract.txt
-#	Use MacroProjectLightPurecontent "www.widgets.cam.ac.uk" "Widgets" "/path/to/site/:/path/to/php/libraries/:/path/to/projectlight-purecontent/"
+#	Use MacroProjectLightPurecontent "Widgets" "/path/to/projectlight-purecontent"
 
 
-<Macro MacroProjectLightPurecontent $shortname $repoPath $includePath>
+<Macro MacroProjectLightPurecontent $shortname $repoPath>
 	
-	# Set include_path
-	<Location />
-		php_value include_path $includePath
-	</Location>
-	
-	# Enable HTML pages to be parsed
+	# Enable PHP parsing of HTML pages
 	AddType application/x-httpd-php .html
 	
 	# Load site; change settings in sitetech/.config.php
