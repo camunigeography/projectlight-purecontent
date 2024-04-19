@@ -39,11 +39,11 @@ class projectlight
 	# Constructor
 	public function __construct ()
 	{
-		# Load the settings file, from within the site
+		# Load the settings file, from within the site files
 		require_once ($_SERVER['DOCUMENT_ROOT'] . '/sitetech/.config.php');
 		
-		# Ensure the pureContent framework is loaded and clean server globals
-		require_once ('pureContent.php');
+		# Load pureContent implementation, which will also run pureContent::cleanServerGlobals ()
+		require_once (__DIR__ . '/vendor/libpurecontent/purecontent/src/pureContent.php');
 		
 		# Merge the settings
 		$this->settings = $this->assignArguments ($settings, $this->defaults ());

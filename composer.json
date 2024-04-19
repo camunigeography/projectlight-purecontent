@@ -1,0 +1,16 @@
+{
+    "name": "camunigeography/projectlight-purecontent",
+    "description": "University of Cambridge 'Project Light' theme implementation for pureContent",
+    "type": "project",
+    "license": "GPL-3.0-only",
+    "minimum-stability": "stable",
+    "require": {
+        "libpurecontent/purecontent": "^1.13.2"
+    },
+    "scripts": {
+        "post-autoload-dump": [
+            "rm vendor/autoload.php",
+            "rm -rf vendor/composer/"
+        ]
+    }
+}

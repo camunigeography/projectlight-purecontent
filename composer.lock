@@ -1,0 +1,55 @@
+{
+    "_readme": [
+        "This file locks the dependencies of your project to a known state",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
+        "This file is @generated automatically"
+    ],
+    "content-hash": "23f9c6d0aad0c6571ad4d6e8fdeaa1c3",
+    "packages": [
+        {
+            "name": "libpurecontent/purecontent",
+            "version": "v1.13.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/libpurecontent/purecontent.git",
+                "reference": "d62f91063e3f326f54a96a86d1857fc93cf3f93b"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/libpurecontent/purecontent/zipball/d62f91063e3f326f54a96a86d1857fc93cf3f93b",
+                "reference": "d62f91063e3f326f54a96a86d1857fc93cf3f93b",
+                "shasum": ""
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "pureContent": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-3.0-only"
+            ],
+            "authors": [
+                {
+                    "name": "mvl22"
+                }
+            ],
+            "description": "PHP library pureContent within the pureContent library suite",
+            "support": {
+                "issues": "https://github.com/libpurecontent/purecontent/issues",
+                "source": "https://github.com/libpurecontent/purecontent/tree/v1.13.2"
+            },
+            "time": "2024-04-19T14:22:48+00:00"
+        }
+    ],
+    "packages-dev": [],
+    "aliases": [],
+    "minimum-stability": "stable",
+    "stability-flags": [],
+    "prefer-stable": false,
+    "prefer-lowest": false,
+    "platform": [],
+    "platform-dev": [],
+    "plugin-api-version": "2.3.0"
+}

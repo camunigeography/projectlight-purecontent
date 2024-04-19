@@ -1,3 +1,4 @@
+vendor/
 sitetech/.config.php
 /shortcodes/*
 !/shortcodes/README.md
