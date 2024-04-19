@@ -40,7 +40,7 @@ class projectlight
 	public function __construct ()
 	{
 		# Load the settings file, from within the site
-		require_once ('sitetech/.config.php');
+		require_once ($_SERVER['DOCUMENT_ROOT'] . '/sitetech/.config.php');
 		
 		# Ensure the pureContent framework is loaded and clean server globals
 		require_once ('pureContent.php');
@@ -392,7 +392,7 @@ class projectlight
 	# Main menu (along the top)
 	public function menu ()
 	{
-		require_once ('sitetech/menu.html');
+		require_once ($_SERVER['DOCUMENT_ROOT'] . '/sitetech/menu.html');
 		return pureContent::generateMenu ($menu, 'campl-selected', 3, array (), '*', $id = NULL, $class = 'campl-unstyled-list', $returnNotEcho = true, $addSubmenuClass = 'campl-unstyled-list campl-local-dropdown-menu', $submenuDuplicateFirstLink = '<span>&nbsp;&ndash; Overview</span>');
 	}
 	
@@ -640,8 +640,11 @@ class projectlight
 		# Define global shortcodes directory
 		$additionalDirectory = realpath (dirname (__FILE__)) . '/shortcodes/';
 		
+		# Determine the path to sitetech in the repo; this is used by the shortcode handler to loaded sitetech/appended.html for an early finish
+		$pathToRepo = __DIR__ . '/';
+		
 		# Run handler
-		pureContent::shortcodeHandledContent ($additionalDirectory);
+		pureContent::shortcodeHandledContent ($additionalDirectory, $pathToRepo);
 	}
 	
 	

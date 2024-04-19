@@ -6,7 +6,7 @@
 #	Use MacroProjectLightPurecontent "www.widgets.cam.ac.uk" "Widgets" "/path/to/site/:/path/to/php/libraries/:/path/to/projectlight-purecontent/"
 
 
-<Macro MacroProjectLightPurecontent $shortname $includePath>
+<Macro MacroProjectLightPurecontent $shortname $repoPath $includePath>
 	
 	# Set include_path
 	<Location />
@@ -17,8 +17,8 @@
 	AddType application/x-httpd-php .html
 	
 	# Load site; change settings in sitetech/.config.php
-	php_value auto_prepend_file sitetech/prepended.html
-	php_value auto_append_file sitetech/appended.html
+	php_value auto_prepend_file $repoPath/sitetech/prepended.html
+	php_value auto_append_file $repoPath/sitetech/appended.html
 	
 	# Alias assets
 	Use MacroProjectLight
