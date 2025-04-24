@@ -393,7 +393,8 @@ class projectlight
 	public function menu ()
 	{
 		require_once ($_SERVER['DOCUMENT_ROOT'] . '/sitetech/menu.html');
-		return pureContent::generateMenu ($menu, 'campl-selected', 3, array (), '*', $id = NULL, $class = 'campl-unstyled-list', $returnNotEcho = true, $addSubmenuClass = 'campl-unstyled-list campl-local-dropdown-menu', $submenuDuplicateFirstLink = '<span>&nbsp;&ndash; Overview</span>');
+		if (!isSet ($orphanedDirectories)) {$orphanedDirectories = array ();}
+		return pureContent::generateMenu ($menu, 'campl-selected', 3, $orphanedDirectories, '*', $id = NULL, $class = 'campl-unstyled-list', $returnNotEcho = true, $addSubmenuClass = 'campl-unstyled-list campl-local-dropdown-menu', $submenuDuplicateFirstLink = '<span>&nbsp;&ndash; Overview</span>');
 	}
 	
 	
