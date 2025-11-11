@@ -6,7 +6,7 @@
 #	Use MacroProjectLightPurecontent "Widgets" "/path/to/projectlight-purecontent"
 
 
-<Macro MacroProjectLightPurecontent $shortname $repoPath>
+<Macro MacroProjectLightPurecontent $repoPath>
 	
 	# Enable PHP parsing of HTML pages
 	AddType application/x-httpd-php .html
@@ -19,11 +19,10 @@
 	Use MacroProjectLight
 	
 	# SSO (Single Sign-On location)
-	Use MacroSingleSignOnRaven "$shortname Single Sign-On" /
+	Use MacroSingleSignOnRaven /
 	
 	# Errors
 	ErrorDocument 403 /sitetech/403.html
 	ErrorDocument 404 /sitetech/404.html
 	
 </Macro>
-
