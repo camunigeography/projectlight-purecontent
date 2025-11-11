@@ -19,7 +19,7 @@
 	Use MacroProjectLight
 	
 	# SSO (Single Sign-On location)
-	Use MacroSingleSignOnRaven /
+	Use MacroSingleSignOnRaven
 	
 	# Errors
 	ErrorDocument 403 /sitetech/403.html
