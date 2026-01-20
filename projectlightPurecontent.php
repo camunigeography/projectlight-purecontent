@@ -103,10 +103,6 @@ class projectlight
 		
 		# Get the file contents
 		$this->fileContents = file_get_contents ($_SERVER['SCRIPT_FILENAME']);
-		
-		# Load box generation support
-		#!# Remove when sites all moved to using shortcode, which loads the class itself
-		require_once ('boxes.php');
 	}
 	
 	
