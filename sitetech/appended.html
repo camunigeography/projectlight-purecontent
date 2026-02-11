@@ -20,11 +20,11 @@
 		<div class="campl-wrap clearfix">
 			<div class="campl-column3 campl-footer-navigation">
 				<div class="campl-content-container campl-navigation-list">
-					<h3><!-- {$footer-header-1} --><a href="/about/">About</a><!-- /{$footer-header-1} --></h3> 
+					<h3><!-- {$footer-header-1} --><a href="<?php echo (file_exists ($_SERVER['DOCUMENT_ROOT'] . '/about/index.html')) ? '/about/' : '#' ?>">About</a><!-- /{$footer-header-1} --></h3>
 					<!-- {$footer-list-1} --><ul class="campl-unstyled-list">
 
 
-				<li><a href="/search/">Search</a></li>
+				<?php if (file_exists ($_SERVER['DOCUMENT_ROOT'] . '/search/index.html')) { ?><li><a href="/search/">Search</a></li><?php } ?>
 				<li><a href="/contacts/">Contact us</a></li>
 				<li><a href="#">^ Top</a></li>
 
@@ -58,7 +58,7 @@
 						<?php echo $projectlight->ssoLinksBottom (); ?>
 					</div>
 					<!-- {$footer-list-2} --><ul class="campl-unstyled-list">
-						<li><a href="/contacts/webmaster.html">Page last updated:<br /><?php echo $projectlight->lastUpdated (); ?> by Webmaster</a></li>
+						<li><a href="<?php echo (file_exists ($_SERVER['DOCUMENT_ROOT'] . '/contacts/webmaster.html') ? '/contacts/webmaster.html' : '/contacts/'); ?>">Page last updated:<br /><?php echo $projectlight->lastUpdated (); ?> by Webmaster</a></li>
 					</ul>
 					
 					<?php echo $projectlight->editLinkBottom (); ?>
