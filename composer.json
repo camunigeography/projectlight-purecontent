@@ -5,7 +5,7 @@
     "license": "GPL-3.0-only",
     "minimum-stability": "stable",
     "require": {
-        "libpurecontent/purecontent": "^1.13.3"
+        "libpurecontent/purecontent": "^1.14"
     },
     "scripts": {
         "post-autoload-dump": [

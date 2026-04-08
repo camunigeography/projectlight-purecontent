@@ -4,20 +4,20 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "658361d85db7de818f4158a5a6329b0d",
+    "content-hash": "f4dc1300d183fc13da2fb899b3ea1611",
     "packages": [
         {
             "name": "libpurecontent/purecontent",
-            "version": "v1.13.3",
+            "version": "v1.14.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/libpurecontent/purecontent.git",
-                "reference": "22372e015ddd7d2120ef48016816a8edd577aa76"
+                "reference": "bf94f4cbfa40514d825209ee5f92b5f62117d55e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/libpurecontent/purecontent/zipball/22372e015ddd7d2120ef48016816a8edd577aa76",
-                "reference": "22372e015ddd7d2120ef48016816a8edd577aa76",
+                "url": "https://api.github.com/repos/libpurecontent/purecontent/zipball/bf94f4cbfa40514d825209ee5f92b5f62117d55e",
+                "reference": "bf94f4cbfa40514d825209ee5f92b5f62117d55e",
                 "shasum": ""
             },
             "type": "library",
@@ -38,18 +38,18 @@
             "description": "PHP library pureContent within the pureContent library suite",
             "support": {
                 "issues": "https://github.com/libpurecontent/purecontent/issues",
-                "source": "https://github.com/libpurecontent/purecontent/tree/v1.13.3"
+                "source": "https://github.com/libpurecontent/purecontent/tree/v1.14.0"
             },
-            "time": "2024-09-23T12:19:48+00:00"
+            "time": "2026-04-08T16:17:22+00:00"
         }
     ],
     "packages-dev": [],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": [],
+    "stability-flags": {},
     "prefer-stable": false,
     "prefer-lowest": false,
-    "platform": [],
-    "platform-dev": [],
-    "plugin-api-version": "2.3.0"
+    "platform": {},
+    "platform-dev": {},
+    "plugin-api-version": "2.6.0"
 }

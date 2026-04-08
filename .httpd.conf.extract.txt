@@ -25,4 +25,9 @@
 	ErrorDocument 403 /sitetech/403.html
 	ErrorDocument 404 /sitetech/404.html
 	
+	# Disallow access to shortcodes cache
+	<Location /sitetech/shortcodes-cache/>
+		Require all denied
+	</Location>
+	
 </Macro>
