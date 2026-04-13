@@ -4,20 +4,20 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "f4dc1300d183fc13da2fb899b3ea1611",
+    "content-hash": "a7c8b28fb4217f4410ab1e6ecb27b27d",
     "packages": [
         {
             "name": "libpurecontent/purecontent",
-            "version": "v1.14.0",
+            "version": "v1.14.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/libpurecontent/purecontent.git",
-                "reference": "bf94f4cbfa40514d825209ee5f92b5f62117d55e"
+                "reference": "44a906bf92c4a2c5cee826e867b3e1e60cf9ac43"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/libpurecontent/purecontent/zipball/bf94f4cbfa40514d825209ee5f92b5f62117d55e",
-                "reference": "bf94f4cbfa40514d825209ee5f92b5f62117d55e",
+                "url": "https://api.github.com/repos/libpurecontent/purecontent/zipball/44a906bf92c4a2c5cee826e867b3e1e60cf9ac43",
+                "reference": "44a906bf92c4a2c5cee826e867b3e1e60cf9ac43",
                 "shasum": ""
             },
             "type": "library",
@@ -38,9 +38,9 @@
             "description": "PHP library pureContent within the pureContent library suite",
             "support": {
                 "issues": "https://github.com/libpurecontent/purecontent/issues",
-                "source": "https://github.com/libpurecontent/purecontent/tree/v1.14.0"
+                "source": "https://github.com/libpurecontent/purecontent/tree/v1.14.1"
             },
-            "time": "2026-04-08T16:17:22+00:00"
+            "time": "2026-04-13T17:45:01+00:00"
         }
     ],
     "packages-dev": [],

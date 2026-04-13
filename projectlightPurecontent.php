@@ -101,6 +101,9 @@ class projectlight
 			}
 		}
 		
+		# Load shortcodes; this is done early so it can be used by both the page and in header functions directly
+		$this->loadShortcodes ();
+			
 		# Get the file contents
 		$this->fileContents = file_get_contents ($_SERVER['SCRIPT_FILENAME']);
 	}
@@ -631,17 +634,25 @@ class projectlight
 	}
 	
 	
-	# Shortcode-handled content - run the shortcode to replace the content, echo the modified content, load the append, then end
-	public function shortcodeHandledContent ()
+	# Function to load shortcodes (but not execute them)
+	private function loadShortcodes ()
 	{
 		# Define global shortcodes directory
 		$additionalDirectory = realpath (dirname (__FILE__)) . '/shortcodes/';
 		
+		# Run handler
+		pureContent::loadShortcodes ($additionalDirectory);
+	}
+	
+	
+	# Shortcode-handled content - run the shortcode to replace the content, echo the modified content, load the append, then end
+	public function shortcodeHandledContent ()
+	{
 		# Determine the path to sitetech in the repo; this is used by the shortcode handler to loaded sitetech/appended.html for an early finish
 		$pathToRepo = __DIR__ . '/';
 		
 		# Run handler
-		pureContent::shortcodeHandledContent ($additionalDirectory, $pathToRepo);
+		pureContent::shortcodeHandledContent ($pathToRepo);
 	}
 	
 	
