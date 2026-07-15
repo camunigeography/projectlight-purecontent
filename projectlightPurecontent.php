@@ -3,6 +3,19 @@
 # Project Light implementation for pureContent
 class projectlight
 {
+	private $settings;
+	private $browserline;
+	private $locationline;
+	private $menusection;
+	private $menufile;
+	private $navigationHierarchy;
+	private $currentDirectory;
+	private $headerImageHtml;
+	private $opengraphHtml;
+	private $isFullWidth;
+	private $fileContents;
+	
+	
 	# Define global defaults
 	private function defaults ()
 	{
